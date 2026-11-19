@@ -17,27 +17,28 @@ function LoanCard({ loan }) {
   const detail = cardContent[loan.slug];
   const Icon = detail.icon;
   const target = `/services/${loan.slug}`;
-  return <article className={`loan-card ${expanded ? 'is-expanded' : ''}`}>
-    <Link to={target} state={{ from: pathname }} className="loan-card-photo" aria-label={`Explore ${loan.name.toLowerCase()}`}>
+  return <article className={`loan-card loan-card-${loan.slug} ${expanded ? 'is-expanded' : ''}`}>
+    <Link to={target} state={{ from: pathname }} className="loan-card-photo" aria-label={`View ${loan.name.toLowerCase()}`}>
       <img src={`/images/${detail.image}`} alt={detail.alt} loading="lazy" width="800" height="500"/>
-      <span className="loan-card-category">{detail.category}</span>
-      <span className="loan-card-icon"><Icon size={24} aria-hidden="true"/></span>
+      <span className="loan-card-image-caption">AM CAPITAL<span>Finance for your next chapter</span></span>
     </Link>
     <div className="loan-card-body">
+      <div className="loan-card-heading"><span className="loan-card-category">{detail.category}</span><Icon size={22} aria-hidden="true"/></div>
       <h3><Link to={target} state={{ from: pathname }}>{loan.name}</Link></h3>
       <p>{detail.text}</p>
-      <ul className="loan-card-features">{loan.features.slice(0, 2).map(feature => <li key={feature}><Check size={16} aria-hidden="true"/>{feature}</li>)}</ul>
+      <div className="loan-card-repayment"><span>Repayment</span><strong>{detail.repayment}</strong></div>
       <button className="loan-card-toggle" aria-expanded={expanded} aria-controls={`summary-${loan.slug}`} onClick={() => setExpanded(!expanded)}>
-        {expanded ? 'Hide borrowing details' : 'Quick borrowing details'}{expanded ? <Minus size={18}/> : <Plus size={18}/>}
+        {expanded ? 'Hide details' : 'At a glance'}{expanded ? <Minus size={17}/> : <Plus size={17}/>}
       </button>
-      <div className="loan-card-details" id={`summary-${loan.slug}`} hidden={!expanded}>
-        <dl><div><dt>Repayment</dt><dd>{detail.repayment}</dd></div><div><dt>Security</dt><dd>{detail.security}</dd></div></dl>
-        <p>Eligibility, costs and terms are decided by the lender.</p>
-      </div>
       <div className="loan-card-actions">
-        <Link className="button" to={target} state={{ from: pathname }}>Explore {loan.name.toLowerCase()}</Link>
+        <Link className="button" to={target} state={{ from: pathname }} aria-label={`Explore ${loan.name.toLowerCase()}`}>Explore loan</Link>
         <Link className="loan-card-calc" to={`/calculators?loan=${loan.slug}`} aria-label={loan.slug === 'overdraft' ? 'Estimate overdraft interest' : `Calculate ${loan.name.toLowerCase()} EMI`}><Calculator size={20}/><span>{loan.slug === 'overdraft' ? 'Interest' : 'EMI'}</span></Link>
       </div>
+    </div>
+    <div className="loan-card-details" id={`summary-${loan.slug}`} hidden={!expanded}>
+      <dl><div><dt>Security</dt><dd>{detail.security}</dd></div></dl>
+      <ul>{loan.features.map(feature => <li key={feature}><Check size={15} aria-hidden="true"/><span>{feature}</span></li>)}</ul>
+      <p>Eligibility, costs and terms are decided by the lender.</p>
     </div>
   </article>;
 }
