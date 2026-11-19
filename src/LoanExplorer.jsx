@@ -74,9 +74,9 @@ export function BorrowingGuide() {
       <Link to="/calculators" className="text-link"><Calculator size={18}/> Explore the loan calculators</Link>
     </div><aside className="documents-panel"><div className="documents-heading"><FileCheck2 size={25}/><h3>Your starting checklist</h3></div><p>Common documents lenders may request.</p>
       <label htmlFor="employment-checklist">Your work profile</label><select id="employment-checklist" value={employment} onChange={event => setEmployment(event.target.value)}><option value="salaried">Salaried</option><option value="self-employed">Self-employed</option></select>
-      <ul aria-live="polite">{['PAN and accepted identity / address proof', ...(employment === 'salaried' ? ['Recent salary slips and Form 16'] : ['ITRs and business financials']), 'Recent bank statements', 'Property or vehicle documents, if applicable'].map(item => <li key={item}><FileCheck2 size={16} aria-hidden="true"/><span>{item}</span></li>)}</ul>
+      <ul aria-live="polite">{['PAN and accepted identity / address proof', ...(employment === 'salaried' ? ['Recent salary slips and Form 16'] : ['ITRs and business financials']), 'Recent bank statements', 'Property or vehicle documents, if applicable'].map(item => <li key={item}><span>{item}</span></li>)}</ul>
       <p className="fine-print">Exact requirements depend on the product and lender. Share documents only through the appropriate secure application process.</p>
-      <Link to="/contact" className="text-link">Ask about your application <Plus size={16}/></Link>
+      <Link to="/contact" className="text-link">Ask about your application</Link>
     </aside></div>
   </div></section>;
 }

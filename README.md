@@ -25,6 +25,10 @@ Home, About, Services, Home Loan, Personal Loan, Auto Loan, Overdraft, Calculato
 
 ## Loan discovery and homepage
 
+The hero supports selectable Home, Personal, Auto and Overdraft goals, previous/next controls and horizontal touch swipes on the image. Each selection updates the image, explanation and loan/enquiry links. The mobile layout places the selector before the image. Motion respects reduced-motion preferences. `src/GoalHero.jsx` and `src/goal-hero.css` contain this implementation.
+
+Company copy describes AM Capital as a private limited company, as supplied by the business owner. The exact registered legal name and CIN have not been supplied and are not invented. Decorative sparkle and CTA icons are removed; functional controls, loan-category and contact icons remain.
+
 The header begins directly at the top of the page. Home and Services share image cards with purpose filters, expandable borrowing details, and links to the relevant calculator preset. Loan pages provide a visible Back to home link when opened from a homepage card, or Back to all loans when opened from Services or a direct link.
 
 The homepage borrowing guide has selectable budget, total-cost and tenure topics plus a document checklist for salaried or self-employed applicants. These are general educational points, not eligibility decisions.
