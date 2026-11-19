@@ -25,7 +25,7 @@ Home, About, Services, Home Loan, Personal Loan, Auto Loan, Overdraft, Calculato
 
 ## Loan discovery and homepage
 
-The hero supports selectable Home, Personal, Auto and Overdraft goals, previous/next controls and horizontal touch swipes on the image. Each selection updates the image, explanation and loan/enquiry links. The mobile layout places the selector before the image. Motion respects reduced-motion preferences. `src/GoalHero.jsx` and `src/goal-hero.css` contain this implementation.
+The original static hero is restored: headline, supporting copy, two primary links and a property photograph. Loan selection remains in the services section. The private limited company description and formal icon cleanup are retained.
 
 Company copy describes AM Capital as a private limited company, as supplied by the business owner. The exact registered legal name and CIN have not been supplied and are not invented. Decorative sparkle and CTA icons are removed; functional controls, loan-category and contact icons remain.
 
