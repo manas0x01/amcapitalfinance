@@ -23,6 +23,14 @@ The production output is `dist/`. The build copies the app shell into each known
 
 Home, About, Services, Home Loan, Personal Loan, Auto Loan, Overdraft, Calculators, Contact, Privacy Policy, Terms & Disclosures, and a not-found page.
 
+## Loan discovery and homepage
+
+The header begins directly at the top of the page. Home and Services share image cards with purpose filters, expandable borrowing details, and links to the relevant calculator preset. Loan pages provide a visible Back to home link when opened from a homepage card, or Back to all loans when opened from Services or a direct link.
+
+The homepage borrowing guide has selectable budget, total-cost and tenure topics plus a document checklist for salaried or self-employed applicants. These are general educational points, not eligibility decisions.
+
+Card copy and interactions are in `src/LoanExplorer.jsx`, with responsive styles in `src/loan-explorer.css`. Generic card photographs are the `loan-*.jpg` files in `public/images/`; the original hero imagery is preserved.
+
 ## Update business information
 
 Edit `src/config.js`. Email, Facebook and Instagram are intentionally empty until the business supplies them. Their UI links appear automatically when configured. Anil Yadav's name and 7+ years of experience use user-supplied information; no unverified title, credentials, partner logos, ratings or testimonials have been invented.
