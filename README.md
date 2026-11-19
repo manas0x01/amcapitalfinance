@@ -1,6 +1,6 @@
 # AM Capital
 
-Responsive multi-page React website for AM Capital, Noida. Built with React, React Router, Vite and Lucide icons. Includes original supplied logo and Anil Yadav portrait.
+Responsive multi-page React website for AM Capital, Noida. Built with React, React Router, Vite and Lucide icons. Includes original supplied logo and Anil Gaur portrait.
 
 ## Run locally
 
@@ -37,7 +37,7 @@ Card copy and interactions are in `src/LoanExplorer.jsx`, with responsive styles
 
 ## Update business information
 
-Edit `src/config.js`. The business email is amcapitalfinance1@gmail.com. Instagram and Facebook icons remain visible with a “Link coming soon” state until their URLs are configured. They automatically become external links once provided. Email icons open the visitor’s default mail app. Anil Yadav's name and 7+ years of experience use user-supplied information; no unverified title, credentials, partner logos, ratings or testimonials have been invented.
+Edit `src/config.js`. The business email is amcapitalfinance1@gmail.com. Instagram and Facebook icons remain visible with a “Link coming soon” state until their URLs are configured. They automatically become external links once provided. Email icons open the visitor’s default mail app. Anil Gaur's name and 7+ years of experience use user-supplied information; no unverified title, credentials, partner logos, ratings or testimonials have been invented.
 
 Loan content lives in `src/data.js`. Review actual lender terms before adding specific rates, eligibility thresholds, fees or approval promises.
 
@@ -51,7 +51,7 @@ Monthly reducing-balance EMI calculation with zero-interest handling. Home, pers
 
 ## Assets and references
 
-The About page includes an office and team gallery after the company and Anil Yadav introductions. Eight user-supplied photos from `D:/amcapital/office photos` are copied, without retouching, into `public/images/office/`. The gallery uses a featured desktop composition and a touch-scrollable photo strip on mobile. Photos open in a native modal dialog with full-image display, previous/next buttons, keyboard arrows, Escape to close, touch swipes and focus restoration. The footer links directly to `/about#office-gallery`.
+The About page includes an office and team gallery after the company and Anil Gaur introductions. Eight user-supplied photos from `D:/amcapital/office photos` are copied, without retouching, into `public/images/office/`. The gallery uses a featured desktop composition and a touch-scrollable photo strip on mobile. Photos open in a native modal dialog with full-image display, previous/next buttons, keyboard arrows, Escape to close, touch swipes and focus restoration. The footer links directly to `/about#office-gallery`.
 
 Gallery captions describe visible scenes without inventing staff names, award titles or dates. Implementation: `src/OfficeGallery.jsx` and `src/office-gallery.css`.
 
