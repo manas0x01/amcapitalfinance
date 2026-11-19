@@ -33,7 +33,7 @@ Card copy and interactions are in `src/LoanExplorer.jsx`, with responsive styles
 
 ## Update business information
 
-Edit `src/config.js`. Email, Facebook and Instagram are intentionally empty until the business supplies them. Their UI links appear automatically when configured. Anil Yadav's name and 7+ years of experience use user-supplied information; no unverified title, credentials, partner logos, ratings or testimonials have been invented.
+Edit `src/config.js`. The business email is amcapitalfinance1@gmail.com. Instagram and Facebook icons remain visible with a “Link coming soon” state until their URLs are configured. They automatically become external links once provided. Email icons open the visitor’s default mail app. Anil Yadav's name and 7+ years of experience use user-supplied information; no unverified title, credentials, partner logos, ratings or testimonials have been invented.
 
 Loan content lives in `src/data.js`. Review actual lender terms before adding specific rates, eligibility thresholds, fees or approval promises.
 
