@@ -51,6 +51,10 @@ Monthly reducing-balance EMI calculation with zero-interest handling. Home, pers
 
 ## Assets and references
 
+The About page includes an office and team gallery after the company and Anil Yadav introductions. Eight user-supplied photos from `D:/amcapital/office photos` are copied, without retouching, into `public/images/office/`. The gallery uses a featured desktop composition and a touch-scrollable photo strip on mobile. Photos open in a native modal dialog with full-image display, previous/next buttons, keyboard arrows, Escape to close, touch swipes and focus restoration. The footer links directly to `/about#office-gallery`.
+
+Gallery captions describe visible scenes without inventing staff names, award titles or dates. Implementation: `src/OfficeGallery.jsx` and `src/office-gallery.css`.
+
 - UI reference: https://www.vitalassure.com/ — adapted into AM Capital’s red, black and white identity; no content or business claims copied.
 - Logo and portrait: user-supplied.
 - Illustrative lifestyle imagery: Unsplash (local images in `public/images/`). Photos are not company premises or clients.
