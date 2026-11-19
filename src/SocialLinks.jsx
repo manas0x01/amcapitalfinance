@@ -28,8 +28,8 @@ export default function SocialLinks() {
           <Icon/><span className="social-tooltip">{name} · Link coming soon</span>
         </button>
     )}
-    <a href={`mailto:${company.email}`} aria-label={`Email AM Capital at ${company.email}`} title={company.email}><GmailIcon/></a>
-    <a href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent('Hello AM Capital, I would like to discuss a loan.')}`} aria-label="Chat on WhatsApp" title="WhatsApp" target="_blank" rel="noreferrer"><MessageCircle size={19} aria-hidden="true"/></a>
-    <a href={company.phoneHref} aria-label="Call AM Capital" title="Call AM Capital"><Phone size={19} aria-hidden="true"/></a>
+    <a href={`mailto:${company.email}`} aria-label={`Email AM CAPITAL FINANCE at ${company.email}`} title={company.email}><GmailIcon/></a>
+    <a href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent('Hello AM CAPITAL FINANCE, I would like to discuss a loan.')}`} aria-label="Chat on WhatsApp" title="WhatsApp" target="_blank" rel="noreferrer"><MessageCircle size={19} aria-hidden="true"/></a>
+    <a href={company.phoneHref} aria-label="Call AM CAPITAL FINANCE" title="Call AM CAPITAL FINANCE"><Phone size={19} aria-hidden="true"/></a>
   </div>;
 }

@@ -55,13 +55,13 @@ export default function OfficeGallery() {
   }
 
   return <section className="office-gallery section" id="office-gallery" aria-labelledby="office-gallery-heading"><div className="container">
-    <div className="section-head"><div><div className="eyebrow"><span/>OUR OFFICE &amp; OUR PEOPLE</div><h2 id="office-gallery-heading">Inside AM Capital.</h2></div><div><p>A closer look at our workspace and the people<br/>who make up our everyday story.</p><span className="office-gallery-hint">Select any photo to view it in full.</span></div></div>
+    <div className="section-head"><div><div className="eyebrow"><span/>OUR OFFICE &amp; OUR PEOPLE</div><h2 id="office-gallery-heading">Inside AM CAPITAL FINANCE.</h2></div><div><p>A closer look at our workspace and the people<br/>who make up our everyday story.</p><span className="office-gallery-hint">Select any photo to view it in full.</span></div></div>
     <div className="office-feature-grid">{photos.slice(0, 3).map((photo, index) => tile(photo, index, true))}</div>
     <div className="office-photo-strip" role="group" aria-label="More office photographs">{photos.slice(3).map((photo, index) => tile(photo, index + 3, false))}</div>
     <div className="office-gallery-bottom"><p>Our office. Our team. Our shared moments.</p><Link to="/contact" className="text-link">Arrange an office visit</Link></div>
     <dialog ref={dialog} className="office-lightbox" aria-labelledby="office-lightbox-title" aria-describedby="office-lightbox-help" onCancel={event => { event.preventDefault(); setSelected(null); }} onClick={event => { if(event.target === event.currentTarget) setSelected(null); }} onKeyDown={event => { if(event.key === 'ArrowRight'){event.preventDefault();move(1);} if(event.key === 'ArrowLeft'){event.preventDefault();move(-1);} }}>
       {active && <div className="office-lightbox-content">
-        <header className="office-lightbox-top"><div><span>AM CAPITAL · OFFICE GALLERY</span><h2 id="office-lightbox-title">{active.title}</h2></div><button type="button" className="office-lightbox-close" autoFocus aria-label="Close photo viewer" onClick={() => setSelected(null)}><X size={23}/></button></header>
+        <header className="office-lightbox-top"><div><span>AM CAPITAL FINANCE · OFFICE GALLERY</span><h2 id="office-lightbox-title">{active.title}</h2></div><button type="button" className="office-lightbox-close" autoFocus aria-label="Close photo viewer" onClick={() => setSelected(null)}><X size={23}/></button></header>
         <div className="office-lightbox-image" onTouchStart={event => { if(event.touches.length === 1) touch.current = {x:event.touches[0].clientX,y:event.touches[0].clientY}; }} onTouchEnd={onSwipe} onTouchCancel={() => {touch.current = null;}}><img src={`/images/office/${active.file}`} alt={active.alt}/></div>
         <div className="office-lightbox-controls"><button type="button" onClick={() => move(-1)}>Previous</button><span role="status" aria-live="polite">{selected + 1} / {photos.length}</span><button type="button" onClick={() => move(1)}>Next</button></div>
         <p id="office-lightbox-help">Swipe or use the arrow keys to browse. Press Escape to close.</p>

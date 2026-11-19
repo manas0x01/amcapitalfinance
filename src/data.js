@@ -8,6 +8,6 @@ export const generalFaqs = [
   ['Which loan is right for me?', 'Start with the purpose. A home loan finances an eligible property, an auto loan finances a vehicle, and a personal loan may cover eligible personal expenses. An overdraft supports flexible borrowing within an approved limit. We can help you understand the differences.'],
   ['What should I have ready for a conversation?', 'Your intended loan purpose, an approximate amount and a comfortable monthly budget are a good starting point. Please do not send PAN, Aadhaar, bank statements or passwords through this website’s enquiry form.'],
   ['Are the calculator rates actual loan offers?', 'No. All calculator inputs and results are illustrative. Actual interest, APR, eligibility, fees and tenure depend on your profile and the lender’s written offer.'],
-  ['Does AM Capital approve or disburse loans?', 'AM Capital provides loan guidance and application support. Approval, terms and disbursal are determined by the respective lender after its assessment.'],
+  ['Does AM CAPITAL FINANCE approve or disburse loans?', 'AM CAPITAL FINANCE provides loan guidance and application support. Approval, terms and disbursal are determined by the respective lender after its assessment.'],
   ['Where can I meet the team?', 'You can find us at D-35, Sector 2, Noida, Uttar Pradesh 201301. Call +91 93113 71952 to arrange a visit.'],
 ];

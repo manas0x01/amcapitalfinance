@@ -20,7 +20,7 @@ function LoanCard({ loan }) {
   return <article className={`loan-card loan-card-${loan.slug} ${expanded ? 'is-expanded' : ''}`}>
     <Link to={target} state={{ from: pathname }} className="loan-card-photo" aria-label={`View ${loan.name.toLowerCase()}`}>
       <img src={`/images/${detail.image}`} alt={detail.alt} loading="lazy" width="800" height="500"/>
-      <span className="loan-card-image-caption">AM CAPITAL<span>Finance for your next chapter</span></span>
+      <span className="loan-card-image-caption">AM CAPITAL FINANCE<span>Finance for your next chapter</span></span>
     </Link>
     <div className="loan-card-body">
       <div className="loan-card-heading"><span className="loan-card-category">{detail.category}</span><Icon size={22} aria-hidden="true"/></div>

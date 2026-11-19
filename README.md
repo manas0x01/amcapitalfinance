@@ -1,6 +1,6 @@
-# AM Capital
+# AM CAPITAL FINANCE
 
-Responsive multi-page React website for AM Capital, Noida. Built with React, React Router, Vite and Lucide icons. Includes original supplied logo and Anil Gaur portrait.
+Responsive multi-page React website for AM CAPITAL FINANCE, Noida. Built with React, React Router, Vite and Lucide icons. Includes original supplied logo and Anil Gaur portrait.
 
 ## Run locally
 
@@ -27,7 +27,7 @@ Home, About, Services, Home Loan, Personal Loan, Auto Loan, Overdraft, Calculato
 
 The original static hero is restored: headline, supporting copy, two primary links and a property photograph. Loan selection remains in the services section. The private limited company description and formal icon cleanup are retained.
 
-Company copy describes AM Capital as a private limited company, as supplied by the business owner. The exact registered legal name and CIN have not been supplied and are not invented. Decorative sparkle and CTA icons are removed; functional controls, loan-category and contact icons remain.
+Company copy describes AM CAPITAL FINANCE as a private limited company, as supplied by the business owner. The exact registered legal name and CIN have not been supplied and are not invented. Decorative sparkle and CTA icons are removed; functional controls, loan-category and contact icons remain.
 
 The header begins directly at the top of the page. Home and Services share image cards with purpose filters, expandable borrowing details, and links to the relevant calculator preset. Loan pages provide a visible Back to home link when opened from a homepage card, or Back to all loans when opened from Services or a direct link.
 
@@ -55,7 +55,7 @@ The About page includes an office and team gallery after the company and Anil Ga
 
 Gallery captions describe visible scenes without inventing staff names, award titles or dates. Implementation: `src/OfficeGallery.jsx` and `src/office-gallery.css`.
 
-- UI reference: https://www.vitalassure.com/ — adapted into AM Capital’s red, black and white identity; no content or business claims copied.
+- UI reference: https://www.vitalassure.com/ — adapted into AM CAPITAL FINANCE’s red, black and white identity; no content or business claims copied.
 - Logo and portrait: user-supplied.
 - Illustrative lifestyle imagery: Unsplash (local images in `public/images/`). Photos are not company premises or clients.
 - Google Fonts: DM Sans and Manrope, with local system fallback.
