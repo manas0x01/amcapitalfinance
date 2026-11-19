@@ -2,6 +2,10 @@
 .socials a,.socials .social-pending{position:relative;display:grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid #dddde0;background:transparent;border-radius:50%;color:#5f6065}
 .socials a:hover,.socials .social-pending:hover,.socials .social-pending:focus{color:var(--red);border-color:#e0a8af;background:#fff1f1}
 .socials .social-pending{cursor:default}
+.brand-icon{display:block;width:28px;height:28px;flex-shrink:0}
+.instagram-brand{display:grid;place-items:center;border-radius:8px;color:white;background:radial-gradient(circle at 28% 105%,#feda75 0%,#fa7e1e 27%,#d62976 53%,#962fbf 76%,#4f5bd5 100%)}
+.facebook-brand{border-radius:50%;overflow:hidden}
+.socials .social-brand:hover,.socials .social-brand:focus-visible{background:white;border-color:#d6c9db;box-shadow:0 3px 12px #25212a14}
 .social-tooltip{position:absolute;bottom:calc(100% + 9px);left:0;z-index:25;display:none;white-space:nowrap;font-size:.75rem;line-height:1.5;padding:7px 10px;color:#fff;background:#292a2e;border-radius:5px;box-shadow:0 3px 12px #0001;pointer-events:none}
 .social-pending:hover .social-tooltip,.social-pending:focus .social-tooltip{display:block}
 .contact-method>div{min-width:0}.contact-method strong{overflow-wrap:anywhere}.footer-grid>div>a[href^="mailto:"]{overflow-wrap:anywhere}
