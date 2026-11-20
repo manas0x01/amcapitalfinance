@@ -11,7 +11,7 @@ const cardContent = {
   overdraft: { icon: ChartNoAxesCombined, image: 'loan-overdraft.jpg', alt: 'A calculator and financial paperwork', category: 'Flexible credit', purpose: 'Manage cash flow', text: 'Access funds within an approved limit, with interest generally based on the amount used.', repayment: 'As per facility terms', security: 'Depends on the facility' },
 };
 
-function LoanCard({ loan }) {
+function LoanCard({ loan, index }) {
   const [expanded, setExpanded] = useState(false);
   const { pathname } = useLocation();
   const detail = cardContent[loan.slug];
@@ -20,13 +20,16 @@ function LoanCard({ loan }) {
   return <article className={`loan-card loan-card-${loan.slug} ${expanded ? 'is-expanded' : ''}`}>
     <Link to={target} state={{ from: pathname }} className="loan-card-photo" aria-label={`View ${loan.name.toLowerCase()}`}>
       <img src={`/images/${detail.image}`} alt={detail.alt} loading="lazy" width="800" height="500"/>
-      <span className="loan-card-image-caption">AM CAPITAL FINANCE<span>Finance for your next chapter</span></span>
+      <span className="loan-card-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+      <span className="loan-card-badge" aria-hidden="true"><Icon size={26}/></span>
+      <span className="loan-card-image-caption">{detail.purpose}<span>{loan.short}</span></span>
     </Link>
     <div className="loan-card-body">
-      <div className="loan-card-heading"><span className="loan-card-category">{detail.category}</span><Icon size={22} aria-hidden="true"/></div>
+      <div className="loan-card-heading"><span className="loan-card-category">{detail.category}</span></div>
       <h3><Link to={target} state={{ from: pathname }}>{loan.name}</Link></h3>
       <p>{detail.text}</p>
       <div className="loan-card-repayment"><span>Repayment</span><strong>{detail.repayment}</strong></div>
+      <div className="loan-card-chips">{loan.features.slice(0, 2).map(f => <span key={f}><Check size={13} aria-hidden="true"/>{f}</span>)}</div>
       <button className="loan-card-toggle" aria-expanded={expanded} aria-controls={`summary-${loan.slug}`} onClick={() => setExpanded(!expanded)}>
         {expanded ? 'Hide details' : 'At a glance'}{expanded ? <Minus size={17}/> : <Plus size={17}/>}
       </button>
@@ -52,7 +55,7 @@ export function LoanExplorer() {
       {loans.map(loan => <button key={loan.slug} aria-pressed={filter === loan.slug} onClick={() => setFilter(loan.slug)}>{cardContent[loan.slug].purpose}</button>)}
     </div></div>
     <p className="sr-only" role="status">Showing {visible.length} loan {visible.length === 1 ? 'option' : 'options'}</p>
-    <div className={`loan-card-grid ${filter !== 'all' ? 'is-filtered' : ''}`}>{visible.map(loan => <LoanCard loan={loan} key={loan.slug}/>)}</div>
+    <div className={`loan-card-grid ${filter !== 'all' ? 'is-filtered' : ''}`}>{visible.map(loan => <LoanCard loan={loan} index={loans.indexOf(loan)} key={loan.slug}/>)}</div>
   </div>;
 }
 

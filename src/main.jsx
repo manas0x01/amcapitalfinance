@@ -9,6 +9,7 @@ import './styles.css';
 import { LoanExplorer, BorrowingGuide } from './LoanExplorer';
 import SocialLinks, { GmailIcon } from './SocialLinks';
 import './formal-ui.css';
+import './bold-ui.css';
 import CompanyIntroduction from './CompanyIntroduction';
 import OfficeGallery from './OfficeGallery';
 
