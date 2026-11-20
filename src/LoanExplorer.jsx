@@ -17,20 +17,25 @@ function LoanCard({ loan, index }) {
   const detail = cardContent[loan.slug];
   const Icon = detail.icon;
   const target = `/services/${loan.slug}`;
-  return <article className={`loan-card loan-card-${loan.slug} ${expanded ? 'is-expanded' : ''}`}>
+  const tilt = e => {
+    if (e.pointerType === 'touch') return;
+    const el = e.currentTarget, r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    el.style.setProperty('--ry', `${x * 9}deg`); el.style.setProperty('--rx', `${-y * 9}deg`);
+    el.style.setProperty('--gx', `${(x + .5) * 100}%`); el.style.setProperty('--gy', `${(y + .5) * 100}%`);
+  };
+  const untilt = e => { const s = e.currentTarget.style; ['--rx', '--ry'].forEach(k => s.setProperty(k, '0deg')); };
+  return <article onPointerMove={tilt} onPointerLeave={untilt} className={`loan-card loan-card-${loan.slug} ${expanded ? 'is-expanded' : ''}`}>
     <Link to={target} state={{ from: pathname }} className="loan-card-photo" aria-label={`View ${loan.name.toLowerCase()}`}>
       <img src={`/images/${detail.image}`} alt={detail.alt} loading="lazy" width="800" height="500"/>
-      <span className="loan-card-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-      <span className="loan-card-badge" aria-hidden="true"><Icon size={26}/></span>
-      <span className="loan-card-image-caption">{detail.purpose}<span>{loan.short}</span></span>
+      <span className="loan-card-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}<i/> 04</span>
+      <span className="loan-card-image-caption">AM CAPITAL FINANCE<span>Finance for your next chapter</span></span>
     </Link>
     <div className="loan-card-body">
-      <div className="loan-card-heading"><span className="loan-card-category">{detail.category}</span></div>
+      <div className="loan-card-heading"><span className="loan-card-category">{detail.category}</span><Icon size={22} aria-hidden="true"/></div>
       <h3><Link to={target} state={{ from: pathname }}>{loan.name}</Link></h3>
       <p>{detail.text}</p>
-      <div className="loan-card-repayment"><span>Repayment</span><strong>{detail.repayment}</strong></div>
-      <div className="loan-card-chips">{loan.features.slice(0, 2).map(f => <span key={f}><Check size={13} aria-hidden="true"/>{f}</span>)}</div>
-      <button className="loan-card-toggle" aria-expanded={expanded} aria-controls={`summary-${loan.slug}`} onClick={() => setExpanded(!expanded)}>
+      <div className="loan-card-repayment"><span>Repayment</span><strong>{detail.repayment}</strong></div>      <button className="loan-card-toggle" aria-expanded={expanded} aria-controls={`summary-${loan.slug}`} onClick={() => setExpanded(!expanded)}>
         {expanded ? 'Hide details' : 'At a glance'}{expanded ? <Minus size={17}/> : <Plus size={17}/>}
       </button>
       <div className="loan-card-actions">
